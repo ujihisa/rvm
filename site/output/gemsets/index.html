@@ -31,22 +31,24 @@
         <h2>Navigation</h2>
         <ul>
           <li><a href="/install/">Installing</a></li>
-          <li><a href="/use/">Using</a></li>
+          <li><a href="/upgrade/">Upgrading</a></li>
+          <li><a href="/cli/">CLI</a></li>
           <li><a href="/implementations/">Interpreters</a></li>
           <li><a href="/patchlevels/">Patch Levels</a></li>
           <li><a href="/revisions/">Revisions</a></li>
           <li><a href="/tags/">Tags</a></li>
           <li><a href="/setdefault/">Set Default Ruby</a></li>
+          <li><a href="/gems/">Gems</a></li>
           <li><a href="/gemsets/">Named Gem Sets</a></li>
-          <!--
-          <li><a href="/rvmrc/">rvmrc</a></li>
-          -->
+          <!-- <li><a href="/rvmrc/">rvmrc</a></li> -->
           <li><a href="/rubydo/">rubydo / do</a></li>
           <li><a href="/passenger/">Passenger</a></li>
+          <li><a href="/subshells/">Subshells</a></li>
+          <li><a href="/prompt/">Shell Prompt</a></li>
           <li><a href="/examples/">Many Examples</a></li>
           <li><a href="/faq/">FAQ & Notes</a></li>
+          <li><a href="/requirements/">Pre-Requirements</a></li>
           <li><a href="/troubleshooting/">Troubleshooting</a></li>
-          <li><a href="/todo/">TODO</a></li>
           <li><a href="/contribute/">Contributing</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/thanks/">Credits &amp; Thanks</a></li>
@@ -54,12 +56,13 @@
 
         <h2>IRC</h2>
         <ul>
-          <li>irc.freenode.net #rvm</li>
+          <li><a href="http://webchat.freenode.net/?channels=rvm">irc.freenode.net#rvm</a></li>
           <li>wayneeseguin</li>
         </ul>
 
         <h2>Development</h2>
         <ul>
+          <li><a href="http://groups.google.com/group/rubyversionmanager/">Google Group</a></li>
           <li><a href="http://github.com/wayneeseguin/rvm/tree/master">Git (GitHub)</a></li>
           <li><a href="http://github.com/wayneeseguin/rvm/issues">Issues (GitHub)</a></li>
           <li><a href="https://www.pivotaltracker.com/projects/26822">Pivotal Tracker Project</a></li>
@@ -137,9 +140,35 @@ Now that our environments are setup switching between rails versions and ruby ve
 
 <p> Although I recommend against using it, if you are sure you can use 'rvm gemdup default' and 'rvm gemdup system' to clone user default gems and system gems respectively.</p>
 
+<h2> Gem Sets with passenger </h2>
+<p>
+  Documented on the <a href="/passenger/">page</a>
+</p>
+
+<h2> Managing gem sets </h2>
+<p>
+  We can not only use completely separate gem sets per application/project/etc... we can also dump and load them easily.
+</p>
+<h3> Dumping a gem set </h3>
+<p>
+  To dump a gem set easily, assuming a project called 'albinochipmunk' running on Ruby 1.9.1:
+</p>
+<code>
+∴ rvm 1.9.1 -m albinochipmunk --dump
+</code>
+<p> will create an 'albinochipmunk.gemset' file. </p>
+
+<h3> Loading a gem set</h3>
+<p> To load this gem set simply do: </p>
+<code>
+∴ rvm 1.9.1 -m albinochipmunk --load albinochipmunk.gemset
+</code>
+<p> Note that you can use any gem set name to load into. </p>
+
 
         <a name="bottom"></a>
       </div>
     </div>
   </body>
 </html>
+
